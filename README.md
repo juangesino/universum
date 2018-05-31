@@ -7,7 +7,7 @@
 
 ## About
 
-Universum is a simple physics simulation generator written using Meteor.
+Universum is a simple physics simulator written using Meteor.
 
 Checkout a demo [here](http://universum-demo.herokuapp.com).
 
