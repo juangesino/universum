@@ -1,0 +1,72 @@
+<template name="home">
+
+  <!-- <div class="particle" data-position-y="500" data-position-x="0" data-velocity-vertical="-100"></div> -->
+  {{#each particles}}
+    <div class="particle"
+    id="particle{{this.id}}"
+    data-position-y="{{this.positionY}}"
+    data-position-x="{{this.positionX}}"
+    data-mass="{{this.mass}}"
+    data-velocity-horizontal="{{this.velocityX}}"
+    data-acceleration-horizontal="{{this.accelerationX}}"
+    data-velocity-vertical="{{this.velocityY}}"
+    data-acceleration-vertical="{{this.accelerationY}}"
+    style="bottom:{{this.bottom}}px;left:{{this.left}}px;">
+  </div>
+  {{/each}}
+
+
+  <div id="new-particle-modal" class="modal fade" tabindex="-1">
+    <div class="vertical-alignment-helper">
+      <div class="modal-dialog vertical-align-center">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-dismissible alert-danger" id="new-particle-error" style="display: none;">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <span>Alert!</span>
+            </div>
+            <form class="js-add-particle">
+              <input type="hidden" id="modalAction" name="action" value="new">
+              <input type="hidden" id="modalParticleId" name="particleId" value="">
+              <div class="form-group">
+                <label for="positionX">Position X <span class="text-danger">*</span></label>
+                <input type="number" class="form-control" id="positionX" autocomplete="off" required min="0" value="10">
+              </div>
+              <div class="form-group">
+                <label for="positionY">Position Y <span class="text-danger">*</span></label>
+                <input type="number" class="form-control" id="positionY" autocomplete="off" required min="0" value="500">
+              </div>
+              <div class="form-group">
+                <label for="mass">Mass</label>
+                <input type="number" class="form-control" id="mass" autocomplete="off" min="0">
+              </div>
+              <div class="form-group">
+                <label for="velocityX">Velocity X</label>
+                <input type="number" class="form-control" id="velocityX" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="accelerationX">Acceleration X</label>
+                <input type="number" class="form-control" id="accelerationX" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="velocityY">Velocity Y</label>
+                <input type="number" class="form-control" id="velocityY" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="accelerationY">Acceleration Y</label>
+                <input type="number" class="form-control" id="accelerationY" autocomplete="off">
+              </div>
+              <br>
+              <button type="submit" class="btn btn-success btn-block btn-lg">Submit</button>
+              <button id="modalDeleteBtn" style="display:none;" class="btn btn-danger btn-block btn-lg">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>

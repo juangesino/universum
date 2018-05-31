@@ -1,0 +1,16 @@
+body {
+  background-color: #0770bd;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg stroke='%2392ac96' stroke-width='1' stroke-opacity='0.68'%3E%3Cpath opacity='.5' d='M0,20 h100 M0,40 h100 M0,60 h100 M0,80 h100 M20,0 v100 M40,0 v100 M60,0 v100 M80,0 v100'/%3E%3Cpath stroke='%2392ac96' fill='none' stroke-width='3' d='M0,0 h100 v100'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.particle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 300%;
+  background: red;
+  z-index: 999;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
