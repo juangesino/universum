@@ -3,7 +3,7 @@ Session.set('play', false);
 Session.set('time', 0);
 Session.set('gravity', -10);
 Session.set('particles', []);
-timeMax = 11;
+Session.set('timeMax', 10);
 timeSpeed = 100;
 fps = 0.1;
 ground = 10;
@@ -20,7 +20,7 @@ Tracker.autorun(function(){
     console.log('Starting time..');
     let timerId = window.setInterval(function() {
       Session.set('time', Session.get('time') + fps)
-      if (Session.get('time') <= timeMax) {
+      if (Session.get('time') <= Session.get('timeMax')) {
         updateParticles();
       } else {
         clearInterval(timerId);
